@@ -1,0 +1,14 @@
+<!-- <h1 *ngIf="datafromChild" >
+  {{ datafromChild?.name + ' '+ datafromChild?.gender}} 
+</h1> -->
+<h1 #h1TemplateRefVariable>
+
+</h1>
+<div *ngFor="let employee of employees">
+  <!-- <div (click)="h1TemplateRefVariable.innerHTML = childComponentTemplateRefVariable.employee.name + ' ' + childComponentTemplateRefVariable.employee.gender"> -->
+  <div (click)="h1TemplateRefVariable.innerHTML = childComponentTemplateRefVariable.getEmployeeNameAndGender()">
+    <app-display-employee [employee]="employee" #childComponentTemplateRefVariable>
+    </app-display-employee>
+    <!--(notify)="handleNotify($event)" ></app-display-employee> -->
+  </div>
+</div>
